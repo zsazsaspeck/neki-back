@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class SkillDTO {
 
-	private long Id;
+	private Long Id;
 	private String name;
 	private String version;
 	private String description;
