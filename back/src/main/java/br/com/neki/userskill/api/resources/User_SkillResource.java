@@ -1,7 +1,11 @@
 package br.com.neki.userskill.api.resources;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +18,7 @@ import br.com.neki.userskill.entity.model.Skill;
 import br.com.neki.userskill.entity.model.User;
 import br.com.neki.userskill.entity.model.UserSkill;
 import br.com.neki.userskill.exception.RegraNegocioException;
+import br.com.neki.userskill.model.repository.User_SkillRepository;
 import br.com.neki.userskill.service.User_SkillService;
 import lombok.Builder;
 
@@ -26,7 +31,15 @@ public class User_SkillResource {
 	public User_SkillResource(User_SkillService service) {
 		this.service = service;
 		}
+		
+	@Autowired
+	private User_SkillRepository _userSkillRepository;
 	
+		@GetMapping
+		public List<UserSkill> obter() {
+			return this._userSkillRepository.findAll();
+		}
+		
 	   @PostMapping
 		public ResponseEntity save( @RequestBody User_SkillDTO dto) {
 		   try {

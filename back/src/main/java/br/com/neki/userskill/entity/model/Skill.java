@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +24,14 @@ import lombok.NoArgsConstructor;
 public class Skill {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="teste_residencia.skill_seq")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator ="teste_residencia.skill_seq")
+	@SequenceGenerator(
+		    name="skill_seq",
+		    sequenceName="skill_sequence",
+		    allocationSize=1,
+		    initialValue = 50
+		)
+		 
 	@Column(name = "id")
 	private Long id;
 	
@@ -36,7 +44,5 @@ public class Skill {
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "image_url")
-	private String image_url;
 	
 }

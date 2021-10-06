@@ -1,5 +1,7 @@
 package br.com.neki.userskill.entity.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class User {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator ="teste_residencia.user_seq")
+	@GeneratedValue( strategy = GenerationType.AUTO, generator ="teste_residencia.user_seq")
 	private Long id;
 
 	@Column(name = "login")
@@ -30,5 +32,5 @@ public class User {
 	
 	@Column(name = "password")
 	private String senha;
-	
+		
 }

@@ -5,9 +5,13 @@ import java.time.LocalDateTime;
 
 import br.com.neki.userskill.entity.model.Skill;
 import br.com.neki.userskill.entity.model.User;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
 public class User_SkillDTO {

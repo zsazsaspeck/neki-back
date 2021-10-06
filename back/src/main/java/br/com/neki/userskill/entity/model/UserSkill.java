@@ -29,7 +29,7 @@ public class UserSkill {
 			
 		@Id
 		@Column(name = "id")
-		@GeneratedValue( strategy = GenerationType.SEQUENCE, generator ="teste_residencia.user_skill_seq")
+		@GeneratedValue( strategy = GenerationType.AUTO, generator ="teste_residencia.user_skill_seq")
 		private Long id;
 		
 		@ManyToOne
